@@ -1,14 +1,19 @@
-package com.example.wechat.gateway;
+package com.example.wechatwork.gateway;
 
+import com.example.wechatwork.config.WechatWorkConfig;
+import com.example.wechatwork.model.GetTokenResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.Collections;
-
+@Component
 public class WechatWorkGateway {
-    public String getAccessToken() {
+    @Autowired
+    private WechatWorkConfig config;
+
+    public GetTokenResponse getAccessToken() {
         WebClient client = WebClient
                 .builder()
                 .baseUrl("https://qyapi.weixin.qq.com/")
@@ -17,15 +22,15 @@ public class WechatWorkGateway {
                 .build();
 
         WebClient.ResponseSpec response;
-        response = client.get()
+        return client.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/cgi-bin/gettoken")
-                        .queryParam("corpid", "need-to-be-replaced")
-                        .queryParam("corpsecret", "need-to-be-replaced")
+                        .queryParam("corpid", config.getCorpid())
+                        .queryParam("corpsecret", config.getCorpsecret())
                         .build())
-                .retrieve();
-
-        return response.bodyToMono(String.class).block();
+                .retrieve()
+                .bodyToMono(GetTokenResponse.class)
+                .block();
     }
 
     public String getCallbackIp(String accessToken) {

@@ -1,4 +1,4 @@
-package com.example.wechat.controller;
+package com.example.wechatwork.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
