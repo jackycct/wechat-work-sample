@@ -1,6 +1,5 @@
 package com.example.wechatwork;
 
-import com.example.wechatwork.config.WechatWorkConfig;
 import com.example.wechatwork.gateway.WechatWorkGateway;
 import com.example.wechatwork.model.GetTokenResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ public class WechatWorkSampleApplication implements CommandLineRunner {
 	@Autowired
 	private WechatWorkGateway gw;
 
+
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(WechatWorkSampleApplication.class);
 		app.run();
@@ -20,7 +20,7 @@ public class WechatWorkSampleApplication implements CommandLineRunner {
 	}
 
 	public void run(String... args) throws Exception {
-		GetTokenResponse accessToken = gw.getAccessToken();
-		System.out.println(accessToken);
+		GetTokenResponse res = gw.getAccessToken();
+		System.out.println(res.getAccess_token());
 	}
 }
