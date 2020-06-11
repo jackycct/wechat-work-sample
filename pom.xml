@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>wechat</artifactId>
+	<artifactId>wechatwork-sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>wechat</name>
+	<name>wechatwork-sample</name>
 	<description>Demo project for using WeChat Work API</description>
 
 	<properties>
@@ -41,6 +41,16 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.12</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.14</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.binarywang</groupId>
+			<artifactId>weixin-java-common</artifactId>
+			<version>3.8.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

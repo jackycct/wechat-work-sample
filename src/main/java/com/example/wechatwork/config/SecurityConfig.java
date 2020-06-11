@@ -11,17 +11,17 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties
 @ConfigurationProperties
 public class SecurityConfig {
+    @Value( "${security.token}" )
+    private String token;
+
     @Value( "${security.key}" )
     private String key;
 
-    @Value( "${security.algorithm}" )
-    private String algorithm;
+    public String getToken() {
+        return token;
+    }
 
     public String getKey() {
         return key;
-    }
-
-    public String getAlgorithm() {
-        return algorithm;
     }
 }
