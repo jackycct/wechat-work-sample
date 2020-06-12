@@ -15,11 +15,25 @@ public class WechatWorkConfig {
     @Value( "${wechatwork.corpsecret}" )
     private String corpsecret;
 
+    @Value( "${wechatwork.externalcontact.token}" )
+    private String externalContactToken;
+
+    @Value( "${wechatwork.externalcontact.aesKey}" )
+    private String externalContactAesKey;
+
     public String getCorpid() {
         return corpid;
     }
 
     public String getCorpsecret() {
         return corpsecret;
+    }
+
+    public String getExternalContactToken() {
+        return externalContactToken;
+    }
+
+    public String getExternalContactAesKey() {
+        return externalContactAesKey;
     }
 }

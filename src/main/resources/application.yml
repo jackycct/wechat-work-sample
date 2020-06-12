@@ -1,6 +1,9 @@
 spring:
-  profiles: local
+  profiles: dev
 
 wechatwork:
   corpid:
   corpsecret:
+  externalcontact:
+    token:
+    aesKey:

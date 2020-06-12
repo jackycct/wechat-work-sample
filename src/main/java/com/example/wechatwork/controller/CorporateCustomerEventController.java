@@ -1,6 +1,5 @@
 package com.example.wechatwork.controller;
 
-import com.example.wechatwork.config.SecurityConfig;
 import com.example.wechatwork.config.WechatWorkConfig;
 import com.example.wechatwork.model.AddCorporateCustomerEvent;
 import me.chanjar.weixin.common.util.crypto.WxCryptUtil;
@@ -18,19 +17,13 @@ public class CorporateCustomerEventController {
     @Autowired
     private WechatWorkConfig wechatWorkConfig;
 
-    @Autowired
-    private SecurityConfig securityConfig;
-
     @GetMapping("/corporate-customer-event")
-    public ResponseEntity<?> echo(@RequestParam("msg_signature") String message,
+    public ResponseEntity<?> echo(@RequestParam("msg_signature") String msg_signature,
                        @RequestParam("timestamp") String timestamp,
                        @RequestParam("nonce") String nonce,
                        @RequestParam("echostr") String echostr) {
-        System.out.println(message);
-        System.out.println(echostr);
-
-        WxCryptUtil wxCryptUtil = new WxCryptUtil(securityConfig.getToken(),
-                securityConfig.getKey(),
+        WxCryptUtil wxCryptUtil = new WxCryptUtil(wechatWorkConfig.getExternalContactToken(),
+                wechatWorkConfig.getExternalContactAesKey(),
                 wechatWorkConfig.getCorpid());
 
         String decrypt = wxCryptUtil.decrypt(echostr);
