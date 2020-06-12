@@ -3,7 +3,7 @@ package com.example.wechatwork.model;
 import lombok.Data;
 
 @Data
-public class AddCorporateCustomerEvent {
+public class CorporateCustomerEvent {
     private String toUserName;
     private String fromUserName;
     private int createTime;
