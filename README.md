@@ -28,3 +28,30 @@ From this API we can get the welcome_code for sending welcome note for the new c
 ## Send new customer welcome message
 Require welcome_code
 https://work.weixin.qq.com/api/doc/90000/90135/92137
+
+
+
+
+# Setting up the environment
+
+## Go to a working directory
+
+## Clone the project
+git clone https://github.com/jackycct/wechat-work-sample.git
+
+## Lombok for intellij
+If you are using Intellij for development, enable Lombok plugin
+https://projectlombok.org/setup/intellij
+
+## Enabling Port forwarding 
+Enable port forward in your router from external URL to your  callback service
+e.g. 
+From External Port 8080 To Internal IP Address 192.186.1.123, port 8080
+
+## Identify your public internet IP address from your router
+e.g 220.246.105.20
+
+## Validate the port forwarding
+Use your browser to access http://220.246.105.20:8080/ping
+
+You should be able to see the "pong"
