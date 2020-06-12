@@ -20,6 +20,11 @@ public class CorporateCustomerEventController {
     @Autowired
     private WechatWorkConfig wechatWorkConfig;
 
+    @GetMapping("/ping")
+    public ResponseEntity<?> ping() {
+        return new ResponseEntity<>("pong", HttpStatus.OK);
+    }
+
     @GetMapping("/corporate-customer-event")
     public ResponseEntity<?> echo(@RequestParam("msg_signature") String msg_signature,
                        @RequestParam("timestamp") String timestamp,
