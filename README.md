@@ -8,16 +8,25 @@ One off authentication using corpid and corpsecret to retrieve access_token,
 which will be used in the subsequent API calls
 https://work.weixin.qq.com/api/doc/90000/90135/91039
 
-## Creating a Message Receiving Server URL
+## Creating a Message Receiving Server
+This sample app include a Spring Boot microservices which provides an endpoint /corporate-customer-event for 
+receiving callbacks.
 
 ## Subscribe to news and events
-In order to allow two-way communication between self-built applications and enterprise WeChat, enterprises can enable the receive message mode in the application management background.
-Enterprises that enable the message receiving mode need to provide the available message receiving server URL (https is recommended).
+In order to allow two-way communication between self-built applications and enterprise WeChat, 
+enterprises can enable the receive message mode in the application management background.
+Enterprises that enable the message receiving mode need to provide the available message receiving server URL 
+(https is recommended).
 
 https://work.weixin.qq.com/api/doc/90000/90135/90237
 
+- Login to [WeChat Work Admin - Customer Contact]
+- Follow these sequence to open ![Event Receiving Server](/doc/images/wechatwork-customer-api.jpg "Event Receiving Server")
+- Specify the URL, Token and AES encryption key 
+![Configure Event Receiving Server](/doc/images/wechatwork-set-event-receiving-server.jpg "Configure Event Receiving Server")
+
 Enterprise needs to provide 
-- token for authenticating the event received from the message receiving URL
+- token defined by enterprise for authenticating the event received from the message receiving URL
 - AES Key for encrypting the message
 
 ## Receiving events - e.g. Adding an external contact
@@ -28,8 +37,6 @@ From this API we can get the welcome_code for sending welcome note for the new c
 ## Send new customer welcome message
 Require welcome_code
 https://work.weixin.qq.com/api/doc/90000/90135/92137
-
-
 
 
 # Setting up the environment
@@ -55,3 +62,6 @@ e.g 220.246.105.20
 Use your browser to access http://220.246.105.20:8080/ping
 
 You should be able to see the "pong"
+
+
+[WeChat Work Admin - Customer Contact]: https://work.weixin.qq.com/wework_admin/frame#customer/analysis
