@@ -55,6 +55,8 @@ Enable port forward in your router from external URL to your  callback service
 e.g. 
 From External Port 8080 To Internal IP Address 192.186.1.123, port 8080
 
+This page provides steps on how to perform port forwarding in major routers https://portforward.com/router.htm
+
 ## Identify your public internet IP address from your router
 e.g 220.246.105.20
 
