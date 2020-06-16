@@ -20,10 +20,17 @@ Enterprises that enable the message receiving mode need to provide the available
 
 https://work.weixin.qq.com/api/doc/90000/90135/90237
 
-- Login to [WeChat Work Admin - Customer Contact]
-- Follow these sequence to open ![Event Receiving Server](/doc/images/wechatwork-customer-api.jpg "Event Receiving Server")
+- Login to [WeChat Work Admin - App Management]
+- Follow these sequence to open ![App Management](/doc/images/wechatwork-app-mgmt.jpg "App Management")
+- Click "Create an app"
+- Create an new app using your SID, choose the allowed users and click "Create an app"
+![Create an app](/doc/images/wechatwork-create-app.jpg "Create an app")
+- Click on the app that you have just created
+- Click on "API enabled to receive messages"
 - Specify the URL, Token and AES encryption key 
-![Configure Event Receiving Server](/doc/images/wechatwork-set-event-receiving-server.jpg "Configure Event Receiving Server")
+![Configure Event Receiving Server](/doc/images/wechatwork-create-app.jpg "Configure Event Receiving Server")
+- Enable all event types
+- Click "Save"
 
 Enterprise needs to provide 
 - token defined by enterprise for authenticating the event received from the message receiving URL
