@@ -27,8 +27,8 @@ https://work.weixin.qq.com/api/doc/90000/90135/90237
 ![Create an app](/doc/images/wechatwork-create-app.jpg "Create an app")
 - Click on the app that you have just created
 - Click on "API enabled to receive messages"
-- Specify the URL, Token and AES encryption key 
 ![Configure Event Receiving Server](/doc/images/wechatwork-set-event-receiving-server.jpg "Configure Event Receiving Server")
+- Specify the URL, Token and AES encryption key 
 - Enable all event types
 - Click "Save"
 
