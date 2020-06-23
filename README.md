@@ -1,3 +1,7 @@
+
+
+
+
 # WeChat Work Sample
 
 This sample illustrates the scenario of sending a Welcome note to a new
@@ -71,6 +75,31 @@ e.g 220.246.105.20
 Use your browser to access http://220.246.105.20:8080/ping
 
 You should be able to see the "pong"
+
+## Postscript
+If you get an illegal key size exception, you need to install java cryptographic extensions. Not required if using Java 9 and beyond. 
+
+## How to deploy to AWS EC2
+You should have got a .pem file when creating a EC2 instance. To login 
+
+```ssh -i "<path to pem file>" ec2-user@ec2-100-26-177-98.compute-1.amazonaws.com```
+
+If you get an error 'Permissions for your pem files is too open', do the following:
+
+* In windows explorer, Right click on 'Properties > Security > Advanced > Disable inheritance'
+* Agree on 'Convert inherited permissions to explicit permssions'
+* Click on 'Edit' permissions in the security tab. 
+* Remove all users apart from the logged in user
+
+### Install Java
+
+Run java -version. You should get an error since java should not be installed. 
+
+Run: ```sudo yum install java-11-amazon-corretto.x86_64``` to install a version of Java that already has crypto extensions available. 
+
+To copy files into ~/app directory:
+ 
+```scp -i "<path to pem>" target\wechatwork-sample-0.0.1-SNAPSHOT.jar ec2-user@<EC2 instance public DNS>:~/app/```
 
 
 [WeChat Work Admin - Customer Contact]: https://work.weixin.qq.com/wework_admin/frame#customer/analysis
